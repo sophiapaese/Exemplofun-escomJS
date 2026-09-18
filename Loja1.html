@@ -8,7 +8,7 @@
 <body>
     <h1>Calculadora de Loja</h1>
     <button onclick="calcularcompra()">Calcular compra</button>
-    <button>Aplicar desconto</button>
+    <button onclick="calculardesconto()">Aplicar desconto</button>
 
     <p id="resultado"></p>
 
@@ -28,6 +28,18 @@
         "Quantidade: " + quantidade + "<br>" +
         "Total da compra: R$ " + total; 
       }
+
+      function calculardesconto(){
+        let desconto = Number(prompt("Digite o % de desconto: "))
+        let valordesconto = total * desconto / 100;
+        let valorfinal = total - valordesconto;
+
+        document.getElementById("resultado").innerHTML += 
+        "<br><strong>Desconto: " + desconto + "%</strong><br>" +
+        "valor do desconto: R$ " + valordesconto + "<br>" +
+        "Valor final: R$ " + valorfinal;
+      }
+
     </script>
 
 </body>
